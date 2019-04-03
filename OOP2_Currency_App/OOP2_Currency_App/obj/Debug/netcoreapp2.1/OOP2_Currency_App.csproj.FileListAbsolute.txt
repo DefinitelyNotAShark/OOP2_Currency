@@ -1,0 +1,11 @@
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\bin\Debug\netcoreapp2.1\OOP2_Currency_App.deps.json
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\bin\Debug\netcoreapp2.1\OOP2_Currency_App.runtimeconfig.json
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\bin\Debug\netcoreapp2.1\OOP2_Currency_App.runtimeconfig.dev.json
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\bin\Debug\netcoreapp2.1\OOP2_Currency_App.dll
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\bin\Debug\netcoreapp2.1\OOP2_Currency_App.pdb
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\obj\Debug\netcoreapp2.1\OOP2_Currency_App.csprojAssemblyReference.cache
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\obj\Debug\netcoreapp2.1\OOP2_Currency_App.csproj.CoreCompileInputs.cache
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\obj\Debug\netcoreapp2.1\OOP2_Currency_App.AssemblyInfoInputs.cache
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\obj\Debug\netcoreapp2.1\OOP2_Currency_App.AssemblyInfo.cs
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\obj\Debug\netcoreapp2.1\OOP2_Currency_App.dll
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\OOP2_Currency_App\obj\Debug\netcoreapp2.1\OOP2_Currency_App.pdb

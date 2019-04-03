@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sophi\\source\\repos\\OOP2_Currency_App\\OOP2_Currency_App\\OOP2_Currency_App.csproj",
+      "projectUniqueName": "C:\\Users\\sophi\\source\\repos\\OOP2_Currency\\OOP2_Currency_App\\OOP2_Currency_App\\OOP2_Currency_App.csproj",
       "projectName": "OOP2_Currency_App",
-      "projectPath": "C:\\Users\\sophi\\source\\repos\\OOP2_Currency_App\\OOP2_Currency_App\\OOP2_Currency_App.csproj",
+      "projectPath": "C:\\Users\\sophi\\source\\repos\\OOP2_Currency\\OOP2_Currency_App\\OOP2_Currency_App\\OOP2_Currency_App.csproj",
       "packagesPath": "C:\\Users\\sophi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sophi\\source\\repos\\OOP2_Currency_App\\OOP2_Currency_App\\obj\\",
+      "outputPath": "C:\\Users\\sophi\\source\\repos\\OOP2_Currency\\OOP2_Currency_App\\OOP2_Currency_App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,0 +1,7 @@
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\bin\Debug\Currency_App_Fixed.exe.config
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\bin\Debug\Currency_App_Fixed.exe
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\bin\Debug\Currency_App_Fixed.pdb
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\obj\Debug\Currency_App_Fixed.csprojAssemblyReference.cache
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\obj\Debug\Currency_App_Fixed.csproj.CoreCompileInputs.cache
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\obj\Debug\Currency_App_Fixed.exe
+C:\Users\sophi\source\repos\OOP2_Currency\OOP2_Currency_App\Currency_App_Fixed\obj\Debug\Currency_App_Fixed.pdb
