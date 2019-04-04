@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel>
             <Label x:Name="RepoValueLabel" Content="Repo Value:"></Label>
-            <ComboBox x:Name="ComboBoxCoinValue" SelectedValuePath="Content" SelectedValue="{Binding SelectedCoinIndex}" Height="26" >
+            <ComboBox x:Name="ComboBoxCoinValue" SelectedValuePath="Content" SelectedValue="{Binding SelectedCoinString}" Height="26" >
                 <ComboBoxItem Content="Penny"></ComboBoxItem>
                 <ComboBoxItem Content="Nickel"></ComboBoxItem>
                 <ComboBoxItem Content="Dime"></ComboBoxItem>
@@ -18,7 +18,7 @@
                 <ComboBoxItem Content="Dollar Coin"></ComboBoxItem>
             </ComboBox>
             <Button x:Name="AddButton" Content="Add" Command="{Binding Add}" Height="27"/>
-            <Label x:Name="AmountLabel" Content="Coins: " Height="32" />
+            <Label x:Name="AmountLabel" Content="{Binding CoinCount}" Height="32" />
             <Button x:Name="LoadButton" Content="Load" Command="{Binding Load}" Height="27" />
             <Button x:Name="SaveButton" Content="Save" Command="{Binding Save}" Height="28" />
             <Button x:Name="NewButton" Content="New" Command="{Binding New}" Height="26" />

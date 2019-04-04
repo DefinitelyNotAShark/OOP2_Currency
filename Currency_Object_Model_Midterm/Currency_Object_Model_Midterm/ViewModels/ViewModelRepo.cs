@@ -14,16 +14,29 @@ namespace Currency_Object_Model_Midterm.ViewModels
     partial class ViewModelRepo : ViewModelBase
     {
         private ICurrencyRepo repo;
-        private CurrencyRepo editableCurrencyRepo;
+        //private CurrencyRepo editableCurrencyRepo;
 
         public ICommand Add { get; set; }
         public ICommand Load { get; set; }
         public ICommand Save { get; set; }
         public ICommand New { get; set; }
 
+        public string CoinCount
+        {
+            get
+            {
+                return  "Coins: " + this.repo.GetCoinCount().ToString();
+            }
+            set
+            {
+                string str = "Coins: " + this.repo.GetCoinCount().ToString();
+                str = value;
+            }
+        }
+
         private string selectedCoinString;
 
-        public string SelectedCoinIndex
+        public string SelectedCoinString
         {
             get { return selectedCoinString; }
             set
@@ -77,7 +90,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
         public ViewModelRepo(CurrencyRepo repo)
         {
             this.repo = repo;
-            editableCurrencyRepo = new CurrencyRepo();//this is the one we can change;
+           // editableCurrencyRepo = new CurrencyRepo();//this is the one we can change;
 
             this.Add = new ViewModelRepoCommand(ExecuteCommandAdd, CanExecuteCommandAdd);
             this.Save = new ViewModelRepoCommand(ExecuteCommandSave, CanExecuteCommandSave);
@@ -88,7 +101,9 @@ namespace Currency_Object_Model_Midterm.ViewModels
         public void ExecuteCommandAdd(object parameter)
         {
             if (SelectedCoin != null)
-                editableCurrencyRepo.AddCoin(SelectedCoin);
+                repo.AddCoin(SelectedCoin);
+
+            RaisePropertyChanged("CoinCount");
         }
 
         public bool CanExecuteCommandAdd(object parameter)
@@ -104,7 +119,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
             IFormatter formatter = new BinaryFormatter();//make the writer?
             Stream stream = new FileStream(this.Path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);//create the file to write?
 
-            formatter.Serialize(stream, editableCurrencyRepo);//write the file
+            formatter.Serialize(stream, repo);//write the file
             stream.Close();//end
         }
 
@@ -118,7 +133,13 @@ namespace Currency_Object_Model_Midterm.ViewModels
         #region Load Command
         public void ExecuteCommandLoad(object parameter)
         {
-            //LOAD
+            IFormatter formatter = new BinaryFormatter();//make the writer?
+            Stream stream = File.Open(Path, FileMode.Open, FileAccess.Read, FileShare.Read);
+
+            repo = (CurrencyRepo)formatter.Deserialize(stream);//I made this whole line up without looking at how to do this, let's see if it works
+            stream.Close();
+
+            RaisePropertyChanged("CoinCount");
         }
 
         public bool CanExecuteCommandLoad(object parameter)
@@ -131,7 +152,9 @@ namespace Currency_Object_Model_Midterm.ViewModels
         #region New Command
         public void ExecuteCommandNew(object parameter)
         {
-            editableCurrencyRepo = new CurrencyRepo();//set it to a new empty repo;
+            repo = new CurrencyRepo();//set it to a new empty repo;
+
+            RaisePropertyChanged("CoinCount");
 
         }
         public bool CanExecuteCommandNew(object parameter)
