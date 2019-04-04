@@ -1,10 +1,12 @@
 ﻿using Currency_Object_Model_Midterm.Models;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
 namespace Currency_Object_Model_Midterm.ViewModels
 {
     partial class ViewModelMakeChangeUI : ViewModelBase
@@ -16,6 +18,8 @@ namespace Currency_Object_Model_Midterm.ViewModels
         public ICommand MakeChange { get; set; }
 
         public ICommand Save { get; set; }
+
+        public string Path = "mypath";//CHANGE LATER
 
         private double amount;
 
@@ -46,6 +50,22 @@ namespace Currency_Object_Model_Midterm.ViewModels
         {
             this.repo = repo;
             this.MakeChange = new ViewModelMakeChangeUICommand(ExecuteCommandMakeChange, CanExecuteCommandMakeChange);
+            this.Save = new ViewModelMakeChangeUICommand(ExecuteCommandSave, CanExecuteCommandSave);
+        }
+
+       void ExecuteCommandSave(object parameter)
+       {
+            IFormatter formatter = new BinaryFormatter();//make the writer?
+            Stream stream = new FileStream(this.Path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);//create the file to write?
+
+            formatter.Serialize(stream, makeChangeRepo);//write the file
+            stream.Close();//end
+        }
+
+        void ExecuteCommandMakeChange(object parameter)
+        {
+            makeChangeRepo = (CurrencyRepo)repo.MakeChange(Amount);//need to figure out how to pass that in!   
+            RaisePropertyChanged("CoinsInRepo");
         }
 
         bool CanExecuteCommandMakeChange(object parameter)
@@ -53,10 +73,13 @@ namespace Currency_Object_Model_Midterm.ViewModels
             return true;
         }
 
-        void ExecuteCommandMakeChange(object parameter)
+        bool CanExecuteCommandSave(object parameter)
         {
-            makeChangeRepo = (CurrencyRepo)repo.MakeChange(Amount);//need to figure out how to pass that in!   
-            RaisePropertyChanged("CoinsInRepo");
+            if (Path != null)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

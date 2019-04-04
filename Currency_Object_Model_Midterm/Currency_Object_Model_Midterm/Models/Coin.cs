@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Currency_Object_Model_Midterm.Models
 {
+    [Serializable]
     abstract class Coin : ICoin
     {
         private int year { get; set; }

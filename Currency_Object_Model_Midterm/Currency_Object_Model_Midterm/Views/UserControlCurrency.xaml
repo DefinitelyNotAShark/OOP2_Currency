@@ -12,7 +12,7 @@
             <Label x:Name="LabelCurrencyTitle" Content="Amount"></Label>
             <TextBox x:Name="TextBoxAmount" Height="25" Text = "{Binding Amount, Mode=TwoWay}"></TextBox>
             <Button x:Name="MakeChangeButton" Content="Make Change" Height="30" Command="{Binding MakeChange}" CommandParameter="{Binding}"></Button>
-            <Button x:Name="SaveButton" Content="Save" Height="30"></Button>
+            <Button x:Name="SaveButton" Content="Save" Height="30" Command="{Binding Save}"></Button>
             <TextBlock x:Name="TextBlockCoinsBack" Height="288" Text="{Binding CoinsInRepo,Mode=OneWay}"></TextBlock>
         </StackPanel>
     </Grid>
