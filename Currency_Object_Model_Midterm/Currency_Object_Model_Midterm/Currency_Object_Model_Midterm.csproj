@@ -58,6 +58,8 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelMakeChangeUI.cs" />
     <Compile Include="ViewModels\ViewModelMakeChangeUICommand.cs" />
+    <Compile Include="ViewModels\ViewModelRepo.cs" />
+    <Compile Include="ViewModels\ViewModelRepoCommand.cs" />
     <Compile Include="Views\UserControlCurrency.xaml.cs">
       <DependentUpon>UserControlCurrency.xaml</DependentUpon>
     </Compile>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Currency_Object_Model_Midterm.Models;
+using Currency_Object_Model_Midterm.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,9 @@ namespace Currency_Object_Model_Midterm.Views
         public UserControlRepo()
         {
             InitializeComponent();
+            CurrencyRepo repo = new CurrencyRepo();
+            ViewModelRepo repoEditModel = new ViewModelRepo(repo);
+            this.DataContext = repoEditModel;
         }
     }
 }

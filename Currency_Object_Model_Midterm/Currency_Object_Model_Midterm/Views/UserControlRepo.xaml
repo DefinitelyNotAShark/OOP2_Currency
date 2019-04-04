@@ -5,20 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Currency_Object_Model_Midterm.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="ViewModelRepo">
     <Grid>
-        <Label x:Name="RepoValueLabel" Content="Repo Value:" Margin="0,0,0,418.6"></Label>
-        <ComboBox x:Name="ComboBoxCoinValue" Margin="0,31,450,371.6" >
-            <ComboBoxItem Content="Penny"></ComboBoxItem>
-            <ComboBoxItem Content="Nickel"></ComboBoxItem>
-            <ComboBoxItem Content="Dime"></ComboBoxItem>
-            <ComboBoxItem Content="Quarter"></ComboBoxItem>
-            <ComboBoxItem Content="Dollar Coin"></ComboBoxItem>
-        </ComboBox>
-        <Button x:Name="AddButton" Content="Add" Margin="377,31,157,371.6"/>
-        <Button x:Name="LoadButton" Content="Load" Margin="377,117,157,285.6"/>
-        <Button x:Name="SaveButton" Content="Save" Margin="377,199,157,203.6"/>
-        <Button x:Name="NewButton" Content="New" Margin="377,285,157,117.6"/>
-        <Label x:Name="AmountLabel" Content="Coins: " Margin="666,31,10,389.6"></Label>
+        <StackPanel>
+            <Label x:Name="RepoValueLabel" Content="Repo Value:"></Label>
+            <ComboBox x:Name="ComboBoxCoinValue" SelectedValuePath="Content" SelectedValue="{Binding SelectedCoinIndex}" Height="26" >
+                <ComboBoxItem Content="Penny"></ComboBoxItem>
+                <ComboBoxItem Content="Nickel"></ComboBoxItem>
+                <ComboBoxItem Content="Dime"></ComboBoxItem>
+                <ComboBoxItem Content="Quarter"></ComboBoxItem>
+                <ComboBoxItem Content="Dollar Coin"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="AddButton" Content="Add" Command="{Binding Add}" Height="27"/>
+            <Label x:Name="AmountLabel" Content="Coins: " Height="32" />
+            <Button x:Name="LoadButton" Content="Load" Command="{Binding Load}" Height="27" />
+            <Button x:Name="SaveButton" Content="Save" Command="{Binding Save}" Height="28" />
+            <Button x:Name="NewButton" Content="New" Command="{Binding New}" Height="26" />
+        </StackPanel>
     </Grid>
 </UserControl>

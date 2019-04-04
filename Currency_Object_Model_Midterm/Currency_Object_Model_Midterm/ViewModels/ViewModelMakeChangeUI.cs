@@ -19,7 +19,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
 
         public ICommand Save { get; set; }
 
-        public string Path = "mypath";//CHANGE LATER
+        public string Path = "makeChangeRepo";//default path appears in bin debug
 
         private double amount;
 
@@ -45,7 +45,6 @@ namespace Currency_Object_Model_Midterm.ViewModels
             }
         }
 
-
         public ViewModelMakeChangeUI(CurrencyRepo repo)
         {
             this.repo = repo;
@@ -53,7 +52,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
             this.Save = new ViewModelMakeChangeUICommand(ExecuteCommandSave, CanExecuteCommandSave);
         }
 
-       void ExecuteCommandSave(object parameter)
+       void ExecuteCommandSave(object parameter)//save to file 
        {
             IFormatter formatter = new BinaryFormatter();//make the writer?
             Stream stream = new FileStream(this.Path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);//create the file to write?

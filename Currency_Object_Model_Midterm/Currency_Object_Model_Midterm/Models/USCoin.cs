@@ -15,6 +15,7 @@ namespace Currency_Object_Model_Midterm.Models
         W
     }
 
+    [Serializable]
     abstract class USCoin : Coin
     {
 
