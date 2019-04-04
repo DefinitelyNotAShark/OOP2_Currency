@@ -9,7 +9,7 @@
              DataContext="ViewModelRepo">
     <Grid>
         <StackPanel>
-            <Label x:Name="RepoValueLabel" Content="Repo Value:"></Label>
+            <Label x:Name="RepoValueLabel" Content="{Binding CoinValue}"></Label>
             <ComboBox x:Name="ComboBoxCoinValue" SelectedValuePath="Content" SelectedValue="{Binding SelectedCoinString}" Height="26" >
                 <ComboBoxItem Content="Penny"></ComboBoxItem>
                 <ComboBoxItem Content="Nickel"></ComboBoxItem>

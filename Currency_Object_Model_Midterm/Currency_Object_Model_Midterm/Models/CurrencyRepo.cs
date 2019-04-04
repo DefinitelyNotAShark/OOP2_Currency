@@ -98,7 +98,7 @@ namespace Currency_Object_Model_Midterm.Models
                 value += Coins[i].MonetaryValue;//get each coin in the list and add it's value to the temp number
             }
 
-            return value;//return the number with every value from the list added
+            return Math.Round(value, 2);//return the number with every value from the list added
         }
     }
 }

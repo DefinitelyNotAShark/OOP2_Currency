@@ -21,18 +21,8 @@ namespace Currency_Object_Model_Midterm.ViewModels
         public ICommand Save { get; set; }
         public ICommand New { get; set; }
 
-        public string CoinCount
-        {
-            get
-            {
-                return  "Coins: " + this.repo.GetCoinCount().ToString();
-            }
-            set
-            {
-                string str = "Coins: " + this.repo.GetCoinCount().ToString();
-                str = value;
-            }
-        }
+        public string CoinCount { get { return  "Coins: " + this.repo.GetCoinCount().ToString(); } }
+        public string CoinValue { get { return "Repo Value: " + this.repo.TotalValue().ToString(); } }
 
         private string selectedCoinString;
 
@@ -46,6 +36,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
             }
         }
 
+        #region Convert String to Coin
         ICoin ConvertStringToICoin(string str)
         {
             switch (str)
@@ -69,6 +60,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
                     return null;
             }
         }
+        #endregion
 
         public ICoin SelectedCoin
         {
@@ -104,6 +96,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
                 repo.AddCoin(SelectedCoin);
 
             RaisePropertyChanged("CoinCount");
+            RaisePropertyChanged("CoinValue");
         }
 
         public bool CanExecuteCommandAdd(object parameter)
@@ -133,18 +126,25 @@ namespace Currency_Object_Model_Midterm.ViewModels
         #region Load Command
         public void ExecuteCommandLoad(object parameter)
         {
-            IFormatter formatter = new BinaryFormatter();//make the writer?
-            Stream stream = File.Open(Path, FileMode.Open, FileAccess.Read, FileShare.Read);
+            try
+            {
+                IFormatter formatter = new BinaryFormatter();//make the writer?
+                Stream stream = File.Open(Path, FileMode.Open, FileAccess.Read, FileShare.Read);
 
-            repo = (CurrencyRepo)formatter.Deserialize(stream);//I made this whole line up without looking at how to do this, let's see if it works
-            stream.Close();
+                repo = (CurrencyRepo)formatter.Deserialize(stream);//I made this whole line up without looking at how to do this, let's see if it works
+                stream.Close();
+            }
+            catch(System.IO.FileNotFoundException e)
+            {
+                //Don't load anyhting if there's nothing to load
+            }
 
             RaisePropertyChanged("CoinCount");
+            RaisePropertyChanged("CoinValue");
         }
 
         public bool CanExecuteCommandLoad(object parameter)
         {
-            //if file exists
             return true;
         }
         #endregion
@@ -155,6 +155,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
             repo = new CurrencyRepo();//set it to a new empty repo;
 
             RaisePropertyChanged("CoinCount");
+            RaisePropertyChanged("CoinValue");
 
         }
         public bool CanExecuteCommandNew(object parameter)
