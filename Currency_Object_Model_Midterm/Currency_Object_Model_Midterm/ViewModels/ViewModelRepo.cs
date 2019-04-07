@@ -11,9 +11,9 @@ using System.Windows.Input;
 
 namespace Currency_Object_Model_Midterm.ViewModels
 {
-    partial class ViewModelRepo : ViewModelBase
+    public partial class ViewModelRepo : ViewModelBase
     {
-        private ICurrencyRepo repo;
+        public ICurrencyRepo repo;
         //private CurrencyRepo editableCurrencyRepo;
 
         public ICommand Add { get; set; }
@@ -34,6 +34,11 @@ namespace Currency_Object_Model_Midterm.ViewModels
                 selectedCoinString = value;
                 RaisePropertyChanged("SelectedCoin");//do something here
             }
+        }
+
+        public string CoinsInRepo
+        {
+            get { return this.repo.About(); }
         }
 
         #region Convert String to Coin
@@ -82,7 +87,6 @@ namespace Currency_Object_Model_Midterm.ViewModels
         public ViewModelRepo(CurrencyRepo repo)
         {
             this.repo = repo;
-           // editableCurrencyRepo = new CurrencyRepo();//this is the one we can change;
 
             this.Add = new ViewModelRepoCommand(ExecuteCommandAdd, CanExecuteCommandAdd);
             this.Save = new ViewModelRepoCommand(ExecuteCommandSave, CanExecuteCommandSave);
@@ -97,6 +101,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
 
             RaisePropertyChanged("CoinCount");
             RaisePropertyChanged("CoinValue");
+            RaisePropertyChanged("CoinsInRepo");
         }
 
         public bool CanExecuteCommandAdd(object parameter)
@@ -141,6 +146,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
 
             RaisePropertyChanged("CoinCount");
             RaisePropertyChanged("CoinValue");
+            RaisePropertyChanged("CoinsInRepo");
         }
 
         public bool CanExecuteCommandLoad(object parameter)
@@ -156,6 +162,7 @@ namespace Currency_Object_Model_Midterm.ViewModels
 
             RaisePropertyChanged("CoinCount");
             RaisePropertyChanged("CoinValue");
+            RaisePropertyChanged("CoinsInRepo");
 
         }
         public bool CanExecuteCommandNew(object parameter)

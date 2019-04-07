@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Currency_Object_Model_Midterm.Models
 {
     [Serializable]
-    class Dime : USCoin
+    public class Dime : USCoin
     {
         public Dime()
         {

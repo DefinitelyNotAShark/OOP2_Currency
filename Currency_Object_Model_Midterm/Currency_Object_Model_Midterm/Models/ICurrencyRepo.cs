@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Currency_Object_Model_Midterm.Models
 {
-    interface ICurrencyRepo
+    public interface ICurrencyRepo
     {
         string About();
         void AddCoin(ICoin c);

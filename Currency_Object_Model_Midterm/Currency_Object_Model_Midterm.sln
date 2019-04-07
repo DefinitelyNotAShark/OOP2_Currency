@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Currency_Object_Model_Midterm", "Currency_Object_Model_Midterm\Currency_Object_Model_Midterm.csproj", "{2AE77B7A-41CF-416B-8F02-C601F963256E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Currency_Object_Midterm_Test", "Currency_Object_Midterm_Test\Currency_Object_Midterm_Test.csproj", "{59A75397-0716-4B5F-90F2-7470B635349B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2AE77B7A-41CF-416B-8F02-C601F963256E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AE77B7A-41CF-416B-8F02-C601F963256E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AE77B7A-41CF-416B-8F02-C601F963256E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A75397-0716-4B5F-90F2-7470B635349B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A75397-0716-4B5F-90F2-7470B635349B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A75397-0716-4B5F-90F2-7470B635349B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A75397-0716-4B5F-90F2-7470B635349B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

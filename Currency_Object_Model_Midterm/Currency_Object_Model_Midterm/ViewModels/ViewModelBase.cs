@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Currency_Object_Model_Midterm.ViewModels
 {
-    class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

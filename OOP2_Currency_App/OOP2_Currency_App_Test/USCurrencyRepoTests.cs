@@ -130,7 +130,7 @@ namespace OOP2_Currency_App_Test
             Assert.AreEqual(valueOrig - penny.MonetaryValue, valueAfterPenny);
             Assert.AreEqual(valueAfterPenny - (numPennies * penny.MonetaryValue), valueAfterFiveMorePennies);
 
-            //Assert.AreEqual(valueAfterFiveMorePennies - nickel.MonetaryValue, valueAfterNickel); //HUH? 1.35 != 1.35 both are double?
+            Assert.AreEqual(valueAfterFiveMorePennies - nickel.MonetaryValue, valueAfterNickel); //HUH? 1.35 != 1.35 both are double?
             Assert.AreEqual(valueAfterNickel - dime.MonetaryValue, valueAfterDime);
             Assert.AreEqual(valueAfterDime - quarter.MonetaryValue, valueAfterQuarter);
             Assert.AreEqual(valueAfterQuarter - dollarCoin.MonetaryValue, valueAfterDollar);
@@ -158,14 +158,6 @@ namespace OOP2_Currency_App_Test
             Assert.AreEqual(changeTwoDollars.Coins.Count, 2);
             Assert.AreEqual(changeTwoDollars.Coins[0].GetType(), new DollarCoin().GetType());
             Assert.AreEqual(changeTwoDollars.Coins[1].GetType(), new DollarCoin().GetType());
-
-            //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins.Count, 2);
-            //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[0].GetType(), new DollarCoin().GetType());
-            //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[1].GetType(), new HalfDollar().GetType());
-
-            //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins.Count, 2);
-            //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[0].GetType(), new HalfDollar().GetType());
-            //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[1].GetType(), new Quarter().GetType());
 
             Assert.AreEqual(changeOneDimeOnePenny.Coins.Count, 2);
             Assert.AreEqual(changeOneDimeOnePenny.Coins[0].GetType(), new Dime().GetType());

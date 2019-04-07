@@ -22,6 +22,7 @@
             <Button x:Name="LoadButton" Content="Load" Command="{Binding Load}" Height="27" />
             <Button x:Name="SaveButton" Content="Save" Command="{Binding Save}" Height="28" />
             <Button x:Name="NewButton" Content="New" Command="{Binding New}" Height="26" />
+            <TextBlock x:Name="TextBlockCoinsBack" Height="288" Text="{Binding CoinsInRepo,Mode=OneWay}"></TextBlock>
         </StackPanel>
     </Grid>
 </UserControl>

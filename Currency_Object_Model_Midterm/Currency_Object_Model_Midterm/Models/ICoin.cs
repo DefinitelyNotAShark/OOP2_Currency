@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Currency_Object_Model_Midterm.Models
 {
-    interface ICoin : ICurrency
+    public interface ICoin : ICurrency
     {
         int Year { get; }
     }

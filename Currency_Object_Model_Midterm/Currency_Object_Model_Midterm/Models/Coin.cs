@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Currency_Object_Model_Midterm.Models
 {
     [Serializable]
-    abstract class Coin : ICoin
+    public abstract class Coin : ICoin
     {
         private int year { get; set; }
         private string name { get; set; }
@@ -15,7 +15,7 @@ namespace Currency_Object_Model_Midterm.Models
 
         public float MonetaryValue
         {
-            get { return monetaryValue; }
+            get { return (float)Math.Round(monetaryValue, 2); }
             set { monetaryValue = value; }
         }
 

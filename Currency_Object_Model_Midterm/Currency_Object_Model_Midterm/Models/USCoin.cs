@@ -16,9 +16,8 @@ namespace Currency_Object_Model_Midterm.Models
     }
 
     [Serializable]
-    abstract class USCoin : Coin
+    public abstract class USCoin : Coin
     {
-
         public MintMark USCoinMintMark;
 
         public string About()
@@ -29,6 +28,22 @@ namespace Currency_Object_Model_Midterm.Models
         public string GetMintNameFromMark()//Give it to me, Mark!
         {
             switch (USCoinMintMark)
+            {
+                case MintMark.D:
+                    return "Denver";
+                case MintMark.P:
+                    return "Philadephia";
+                case MintMark.S:
+                    return "San Francisco";
+                case MintMark.W:
+                    return "West Point";
+            }
+            return null;
+        }
+
+        public static string GetMintNameFromMark(MintMark mark)//Give it to me, Mark!
+        {
+            switch (mark)
             {
                 case MintMark.D:
                     return "Denver";

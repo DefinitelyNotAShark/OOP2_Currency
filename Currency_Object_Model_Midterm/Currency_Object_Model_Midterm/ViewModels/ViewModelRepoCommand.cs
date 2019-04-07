@@ -7,9 +7,9 @@ using System.Windows.Input;
 
 namespace Currency_Object_Model_Midterm.ViewModels
 {
-    partial class ViewModelRepo
+    public partial class ViewModelRepo
     {
-        class ViewModelRepoCommand : ICommand
+        public class ViewModelRepoCommand : ICommand
         {
             public event EventHandler CanExecuteChanged;
 

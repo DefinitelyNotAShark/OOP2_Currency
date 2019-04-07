@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Currency_Object_Model_Midterm.Models
 {
     [Serializable]
-    class CurrencyRepo : ICurrencyRepo
+    public class CurrencyRepo : ICurrencyRepo
     {
         public List<ICoin> Coins { get; set; }
 

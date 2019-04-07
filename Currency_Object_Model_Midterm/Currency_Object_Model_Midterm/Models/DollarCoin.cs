@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace Currency_Object_Model_Midterm.Models
 {
     [Serializable]
-    class DollarCoin : USCoin
+    public class DollarCoin : USCoin
     {
         public DollarCoin()
         {
-            MonetaryValue = 1f;
+            MonetaryValue = 1;
             Name = "Dollar Coin";
         }
 
         public DollarCoin(MintMark mark)
         {
-            MonetaryValue = 1f;
+            MonetaryValue = 1;
             Name = "Dollar Coin";
             USCoinMintMark = mark;
         }
